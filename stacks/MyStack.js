@@ -28,6 +28,7 @@ export function MyStack({ stack }) {
           DATABASE,
           CLUSTER_ARN: Cluster.clusterArn,
           SECRET_ARN: Cluster.secretArn,
+          ER_API_KEY: process.env.ER_API_KEY,
         },
         permissions: [Cluster],
       },

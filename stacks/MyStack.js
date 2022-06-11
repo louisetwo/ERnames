@@ -17,8 +17,10 @@ export function MyStack({ stack }) {
 
   new Api(stack, "api", {
     routes: {
-      "GET /monitor": "functions/lambda.getMonitors",
-      "POST /monitor": "functions/lambda.createMonitor",
+      "GET /monitor": "functions/monitor.getMonitors",
+      "GET /dailyMonitors": "functions/monitor.getDailyMonitors",
+      "POST /monitor": "functions/monitor.createMonitor",
+      "GET /checkNickname": "functions/ERIntegration.checkNickname",
     },
     defaults: {
       function: {

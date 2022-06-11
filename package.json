@@ -21,8 +21,11 @@
     "backend"
   ],
   "dependencies": {
+    "aws-sdk": "^2.1152.0",
+    "axios": "^0.27.2",
     "kysely": "^0.16.6",
     "kysely-data-api": "^0.0.9",
-    "pg": "^8.7.3"
+    "pg": "^8.7.3",
+    "pg-native": "^3.0.0"
   }
 }

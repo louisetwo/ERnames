@@ -1,6 +1,13 @@
-export const successMessage = (body) => {
+export const successMessage = (body, code = 200) => {
   return {
-    statusCode: 200,
-    body,
+    statusCode: code,
+    body: JSON.stringify(body),
+  };
+};
+
+export const failureMessage = (body, code) => {
+  return {
+    statusCode: code,
+    body: JSON.stringify(body),
   };
 };

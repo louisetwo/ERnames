@@ -22,6 +22,7 @@ export const getMonitors = async (event) => {
 
 export const getDailyMonitors = async (event) => {
   const currentDate = new Date().toISOString().split("T")[0];
+  console.log(currentDate);
   const monitors = await db
     .selectFrom("monitor")
     .select(["name", "nickname", "email"])
@@ -30,7 +31,7 @@ export const getDailyMonitors = async (event) => {
   return successMessage(monitors);
 };
 
-// { "email": "lucas@zetaverse.dev", "name": "lucas", "nickname": "lucasssssssss", "availablenickdate": "2022-08-31" }
+// { "email": "louise@zetaverse.dev", "name": "louise", "nickname": "lssssssss", "availablenickdate": "2022-08-31" }
 export const createMonitor = async (event) => {
   const { name, email, nickname, availablenickdate } = JSON.parse(event.body);
   await db

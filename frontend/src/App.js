@@ -7,9 +7,10 @@ function App() {
       <div className="header">
         <ResponsiveAppBar />
       </div>
-      <div className="body">
+      <div className="body" style={{ background: "#4884B51" }}>
         <NicknameSearch />
       </div>
+      <div className="footer"></div>
     </div>
   );
 }

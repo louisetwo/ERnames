@@ -4,9 +4,10 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 
+// azul 2E3B55
 const ResponsiveAppBar = () => {
   return (
-    <AppBar position="static">
+    <AppBar position="static" style={{ background: "#000000" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -16,10 +17,11 @@ const ResponsiveAppBar = () => {
               mr: 2,
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
-              fontWeight: 700,
+              fontWeight: 800,
               letterSpacing: ".3rem",
-              color: "inherit",
+              color: "#F6CE8E",
               textDecoration: "none",
+              fontStyle: "bold",
             }}
           >
             Eternal Names
@@ -32,10 +34,11 @@ const ResponsiveAppBar = () => {
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
               fontFamily: "monospace",
-              fontWeight: 700,
+              fontWeight: 800,
               letterSpacing: ".3rem",
-              color: "inherit",
+              color: "#F6CE8E",
               textDecoration: "none",
+              fontStyle: "bold",
             }}
           >
             Eternal Names

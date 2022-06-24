@@ -1,3 +1,6 @@
+import { Box } from "@mui/system";
+import FormDialog from "./components/FormDialog";
+import Footer from "./components/Layout/Footer";
 import NicknameSearch from "./components/NicknameSearch";
 import ResponsiveAppBar from "./components/ResponsiveAppBar";
 
@@ -7,10 +10,25 @@ function App() {
       <div className="header">
         <ResponsiveAppBar />
       </div>
-      <div className="body" style={{ background: "#4884B51" }}>
-        <NicknameSearch />
+      <Box
+        bgcolor="WhiteSmoke"
+        //bgcolor="#484B51" ou AliceBlue
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "calc(100vh - 64px)",
+        }}
+      >
+        <div className="body">
+          <NicknameSearch />
+          <FormDialog />
+        </div>
+      </Box>
+      <div>
+        <Footer />
       </div>
-      <div className="footer"></div>
     </div>
   );
 }

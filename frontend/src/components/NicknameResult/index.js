@@ -8,7 +8,11 @@ const mapStatus = {
 
 const NicknameResult = ({ result }) => {
   if (result !== null) {
-    return <Alert severity={mapStatus[result.status]}>{result.message}</Alert>;
+    return (
+      <Alert variant="filled" severity={mapStatus[result.status]}>
+        {result.message}
+      </Alert>
+    );
   }
   return null;
 };

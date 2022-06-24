@@ -37,21 +37,15 @@ const NicknameSearch = () => {
   }, [nickname, get]);
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "calc(100vh - 64px)",
-      }}
-    >
-      <Box sx={{ marginBottom: "16px" }}>
+    <>
+      <Box bgcolor="white" sx={{ marginBottom: "16px" }}>
         <TextField
           id="outlined-basic"
           label="Search nickname"
           variant="outlined"
           value={nickname}
+          color="warning"
+          bgcolor="white"
           onChange={handleNicknameChange}
           InputProps={{
             endAdornment: (
@@ -69,7 +63,7 @@ const NicknameSearch = () => {
         />
       </Box>
       <NicknameResult result={result} />
-    </Box>
+    </>
   );
 };
 

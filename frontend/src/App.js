@@ -16,7 +16,7 @@ function App() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          height: "calc(100vh - 64px - 296.5px)",
+          height: "calc(100vh - 64px - 258.5px)",
         }}
       >
         <div className="body">

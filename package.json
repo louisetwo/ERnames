@@ -21,6 +21,7 @@
     "backend"
   ],
   "dependencies": {
+    "@aws-sdk/client-ses": "^3.118.0",
     "aws-sdk": "^2.1152.0",
     "axios": "^0.27.2",
     "kysely": "^0.16.6",

@@ -1,8 +1,14 @@
-import { Api, use } from "@serverless-stack/resources";
+import { Api, Cron, use } from "@serverless-stack/resources";
 import { ClusterStack } from "./ClusterStack";
 
 export function ApiStack({ stack, app }) {
   const { Cluster, DATABASE } = use(ClusterStack);
+  const environment = {
+    DATABASE,
+    CLUSTER_ARN: Cluster.clusterArn,
+    SECRET_ARN: Cluster.secretArn,
+    ER_API_KEY: process.env.ER_API_KEY,
+  };
 
   // Create the API
   const api = new Api(stack, "api", {
@@ -14,13 +20,19 @@ export function ApiStack({ stack, app }) {
     },
     defaults: {
       function: {
-        environment: {
-          DATABASE,
-          CLUSTER_ARN: Cluster.clusterArn,
-          SECRET_ARN: Cluster.secretArn,
-          ER_API_KEY: process.env.ER_API_KEY,
-        },
+        environment,
         permissions: [Cluster],
+      },
+    },
+  });
+
+  new Cron(stack, "Cron", {
+    schedule: "rate(1 day)",
+    job: {
+      function: {
+        handler: "functions/monitor.sendDailyMonitors",
+        environment,
+        permissions: [Cluster, "ses:SendEmail"],
       },
     },
   });

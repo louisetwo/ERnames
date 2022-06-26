@@ -37,8 +37,8 @@ const NicknameSearch = () => {
   }, [nickname, get]);
 
   return (
-    <>
-      <Box bgcolor="white" sx={{ marginBottom: "16px" }}>
+    <Box display="flex" alignItems="center" flexDirection="column">
+      <Box marginBottom={2}>
         <TextField
           id="outlined-basic"
           label="Search nickname"
@@ -63,7 +63,7 @@ const NicknameSearch = () => {
         />
       </Box>
       <NicknameResult result={result} />
-    </>
+    </Box>
   );
 };
 

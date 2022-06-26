@@ -30,6 +30,7 @@ export const checkNickname = async (event) => {
       message: `Nickname will be available on ${expirationDate}`,
       status: "unavailable",
       expirationDate,
+      nickname,
     });
   } catch (err) {
     console.log(err);

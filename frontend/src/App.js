@@ -1,5 +1,4 @@
 import { Box } from "@mui/system";
-import FormDialog from "./components/FormDialog";
 import Footer from "./components/Layout/Footer";
 import NicknameSearch from "./components/NicknameSearch";
 import ResponsiveAppBar from "./components/ResponsiveAppBar";
@@ -23,7 +22,6 @@ function App() {
       >
         <div className="body">
           <NicknameSearch />
-          <FormDialog />
         </div>
       </Box>
       <div>

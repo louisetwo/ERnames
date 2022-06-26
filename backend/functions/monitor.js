@@ -34,13 +34,14 @@ export const getDailyMonitors = async (event) => {
 // { "email": "louise@zetaverse.dev", "name": "louise", "nickname": "lssssssss", "availablenickdate": "2022-08-31" }
 export const createMonitor = async (event) => {
   const { name, email, nickname, availablenickdate } = JSON.parse(event.body);
+  const parsedDate = new Date(availablenickdate).toISOString().split("T")[0];
   await db
     .insertInto("monitor")
     .values({
       name,
       email,
       nickname,
-      availablenickdate,
+      availablenickdate: parsedDate,
     })
     .execute();
   return successMessage(null, 201);

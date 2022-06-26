@@ -1,4 +1,6 @@
 import { Alert } from "@mui/material";
+import { Box } from "@mui/system";
+import CreateMonitorDialog from "../CreateMonitorDialog";
 
 const mapStatus = {
   available: "success",
@@ -9,9 +11,17 @@ const mapStatus = {
 const NicknameResult = ({ result }) => {
   if (result !== null) {
     return (
-      <Alert variant="filled" severity={mapStatus[result.status]}>
-        {result.message}
-      </Alert>
+      <Box>
+        <Alert variant="filled" severity={mapStatus[result.status]}>
+          {result.message}
+        </Alert>
+        {result.status === "unavailable" ? (
+          <CreateMonitorDialog
+            nickname={result.nickname}
+            date={result.expirationDate}
+          />
+        ) : null}
+      </Box>
     );
   }
   return null;

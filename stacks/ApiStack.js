@@ -22,6 +22,7 @@ export function ApiStack({ stack, app }) {
       function: {
         environment,
         permissions: [Cluster],
+        timeout: 60,
       },
     },
   });
